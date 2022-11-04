@@ -1,6 +1,7 @@
 ﻿
 
 using BioTicket;
+using System.Transactions;
 
 bool myBool = false;
 do
@@ -23,10 +24,29 @@ do
             Console.WriteLine("WRONG INPUT");
             break;
         case "2":
+            {
+                Console.WriteLine("please enter the age of the custormer");
+                int age= Convert.ToInt32(Console.ReadLine());
+                if (age>64)
+                {
+                    Console.WriteLine("Thank you for your service! You pay 90 SEK");
+                }
+                if (age<=20)
+                {
+                    Console.WriteLine("You are young! You pay 80 SEK");
+                }
+                if (age<=64 && age>20)
+                {
+                    Console.WriteLine("the price is 120 SEK");
+                }
+            }
+            break;
+        case "3":
+            {
+                Console.WriteLine("tatatat");
+            }
+            break;
 
-            break;
-        default:
-            break;
     }
 
 
