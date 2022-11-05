@@ -2,7 +2,6 @@
 
 using BioTicket;
 using System.Transactions;
-
 bool myBool = false;
 do
 {
@@ -43,7 +42,30 @@ do
             break;
         case "3":
             {
-                Console.WriteLine("tatatat");
+                Console.WriteLine("Want to learn your total ticket cost?");
+                Console.WriteLine("How many are you?");
+                int groupCount = Convert.ToInt32(Console.ReadLine());
+                int standartPrice = 120;
+                //for (int i = 0; i < grupCount; i++)
+                //{
+                //    Console.WriteLine($"how old is custormer number {i+1}");
+                //    int age=Convert.ToInt32(Console.ReadLine());
+                //    Customer customer = new Customer(age);
+
+
+                //}
+                //NEW PRICE CALCULATOR
+
+
+
+                int ticketTotal = CalculateTotal(groupCount, standartPrice);
+                Console.WriteLine($"total price: {ticketTotal}");
+
+                static int CalculateTotal(int price, int groupCount)
+                {
+                    //Console.WriteLine($"total: {price * groupCount}");
+                    return price * groupCount;
+                }
             }
             break;
 
@@ -53,6 +75,7 @@ do
     //this never ending loop 3 menu option? 
     //never ending loop
 } while (!myBool);
+
 
 //Customer cust2 = new Customer("Test", "Testsson", 1980);
 //Customer emre = new Customer("emre", "sorkun", 1979);
