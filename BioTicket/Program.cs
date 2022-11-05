@@ -58,14 +58,12 @@ do
 
 
 
-                int ticketTotal = CalculateTotal(groupCount, standartPrice);
+                int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
                 Console.WriteLine($"total price: {ticketTotal}");
 
-                static int CalculateTotal(int price, int groupCount)
-                {
-                    //Console.WriteLine($"total: {price * groupCount}");
-                    return price * groupCount;
-                }
+
+                //LETS MOVE IT TO SOMEWHERE ELSE AND CALL THIS ONE FROM HERE
+                
             }
             break;
 
