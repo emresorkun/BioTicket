@@ -15,6 +15,9 @@ namespace BioTicket
 
         const int standartTicketPrice = 120;
         //constructor for the custormer class
+
+        public CustomerType customerType;
+
         public Customer(int ageValue, int idValue, int ticketValue)
         {
             age= ageValue; 
@@ -22,8 +25,14 @@ namespace BioTicket
             ticketPrice= ticketValue;
         }
 
-        
-        public int AgeController (int age, int ticketPrice=120)
+        public Customer(int ageValue, int idValue, int ticketValue, CustomerType custType)
+        {
+            age = ageValue;
+            id = idValue;
+            ticketPrice = ticketValue;
+            customerType = custType;
+        }
+        public int AgeController (int age, int ticketPrice)
         {
             if (age > 20||age<65)
             {
@@ -39,7 +48,7 @@ namespace BioTicket
                 ticketPrice = 90;
             };
             Console.WriteLine($"Customer number {id+1} will pay {ticketPrice}");
- 
+            
 
             return ticketPrice;
         }

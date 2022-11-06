@@ -56,11 +56,11 @@ do
                     newCustomer.age= Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
                     newCustomer.AgeController(newCustomer.age);
-                    
-
-                    
-                       
+                    Console.WriteLine($"ID: {newCustomer.id}+AGE: {newCustomer.age}"); 
                 }
+
+                //TRY ANOTHER WAY TO CREATE INSTANSES
+
                 
                 // I can add a loop here to learn each persons age?
                 //create a class here field can be price in the custormer
