@@ -25,7 +25,7 @@ do
         case "2":
             {
                 Console.WriteLine("please enter the age of the custormer");
-                int age= Convert.ToInt32(Console.ReadLine());
+                int age = Convert.ToInt32(Console.ReadLine());
                 if (age>64)
                 {
                     Console.WriteLine("Thank you for your service! You pay 90 SEK");
@@ -48,7 +48,16 @@ do
                 //Instead of declaring prices here I can write a function in utilities??
                 int standartPrice = 120;
                 int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
-                Console.WriteLine($"total price: {ticketTotal}");   
+                Console.WriteLine($"total price: {ticketTotal}");
+                for (int i = 0; i < groupCount; i++)
+                {
+                    Customer newCustomer = new Customer(0, i);
+                    Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
+                }
+
+                // I can add a loop here to learn each persons age?
+                //create a class here field can be price in the custormer
+                //customer class will have a methofs (properties cover fields?)
             }
             break;
 

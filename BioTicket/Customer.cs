@@ -7,42 +7,35 @@ using System.Threading.Tasks;
 namespace BioTicket
 {
     internal class Customer
-    {
+     {
+        public int age;
+        public int id;
 
-        //fields should not be public! they are private! Properties shoud be public! not 
-        //private string lastName;
-        //private string firstName;
-        //private int birthYear;
-        private int age;
 
-        public int Age { get; set; }
-
-        //public string FirstName { get; set; }
-
-        public Customer(int age)
+        const int standartTicketPrice = 120;
+        //constructor for the custormer class
+        public Customer(int ageValue, int idValue)
         {
-            //firstName = first;
-            //firstName = first;
-            //lastName = last;    
-            Age= age;
+            age= ageValue; 
+            id= idValue;
         }
 
-
-        public void AgeCalculater2(Customer customer, int test = 2)
+        
+        public int AgeController (int age, int ticketPrice=120)
         {
-            
-            int age = customer.age;
-            Console.WriteLine($"Customer is {age} years old.");
-
-        }
-        //this can go to another class!!!
-        public void AgeController (int age)
-        {
-            if (age > 20)
+            if (age > 20||age<65)
             {
-                Console.WriteLine("youth discount is not possible");
+                ticketPrice= standartTicketPrice; 
             }
+            if (age < 20)
+            {
+                ticketPrice = 80;
+            }
+            else ticketPrice = 90;
+            Console.WriteLine($"Customer number {id} will pay {ticketPrice}");
+            return ticketPrice;
         }
-
+        
+      
     }
 }

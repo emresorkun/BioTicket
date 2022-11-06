@@ -13,5 +13,6 @@ namespace BioTicket
             //Console.WriteLine($"total: {price * groupCount}");
             return price * groupCount;
         }
+        //can loop and create objects 
     }
 }
