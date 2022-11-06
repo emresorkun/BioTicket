@@ -10,14 +10,16 @@ namespace BioTicket
      {
         public int age;
         public int id;
+        public int ticketPrice;
 
 
         const int standartTicketPrice = 120;
         //constructor for the custormer class
-        public Customer(int ageValue, int idValue)
+        public Customer(int ageValue, int idValue, int ticketValue)
         {
             age= ageValue; 
             id= idValue;
+            ticketPrice= ticketValue;
         }
 
         
@@ -26,6 +28,7 @@ namespace BioTicket
             if (age > 20||age<65)
             {
                 ticketPrice= standartTicketPrice; 
+                
             }
             if (age < 20)
             {
@@ -36,9 +39,11 @@ namespace BioTicket
                 ticketPrice = 90;
             };
             Console.WriteLine($"Customer number {id+1} will pay {ticketPrice}");
+ 
+
             return ticketPrice;
         }
         
-      
+        // using agecontroller I can develop another method that calculates total price?
     }
 }

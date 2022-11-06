@@ -46,19 +46,22 @@ do
                 Console.WriteLine("How many are you?");
                 int groupCount = Convert.ToInt32(Console.ReadLine());
                 //Instead of declaring prices here I can write a function in utilities??
-                int standartPrice = 120;
-                int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
-                Console.WriteLine($"total price: {ticketTotal}");
+                //int standartPrice = 120;
+                //int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
+                //Console.WriteLine($"total price: {ticketTotal}");
                 for (int i = 0; i < groupCount; i++)
                 {
-                    Customer newCustomer = new Customer(0, i);
-                    Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
+                    Customer newCustomer = new Customer(0, i, 120);
+                    Console.WriteLine($"enter age of the customer number {i+1}");
                     newCustomer.age= Convert.ToInt32(Console.ReadLine());
-                    //Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
+                    Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
                     newCustomer.AgeController(newCustomer.age);
                     
-                }
 
+                    
+                       
+                }
+                
                 // I can add a loop here to learn each persons age?
                 //create a class here field can be price in the custormer
                 //customer class will have a methofs (properties cover fields?)
