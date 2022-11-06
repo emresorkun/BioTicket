@@ -53,6 +53,10 @@ do
                 {
                     Customer newCustomer = new Customer(0, i);
                     Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
+                    newCustomer.age= Convert.ToInt32(Console.ReadLine());
+                    //Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
+                    newCustomer.AgeController(newCustomer.age);
+                    
                 }
 
                 // I can add a loop here to learn each persons age?

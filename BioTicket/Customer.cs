@@ -31,8 +31,11 @@ namespace BioTicket
             {
                 ticketPrice = 80;
             }
-            else ticketPrice = 90;
-            Console.WriteLine($"Customer number {id} will pay {ticketPrice}");
+            if (age>65)
+            {
+                ticketPrice = 90;
+            };
+            Console.WriteLine($"Customer number {id+1} will pay {ticketPrice}");
             return ticketPrice;
         }
         
