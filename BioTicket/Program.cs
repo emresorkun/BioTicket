@@ -45,25 +45,10 @@ do
                 Console.WriteLine("Want to learn your total ticket cost?");
                 Console.WriteLine("How many are you?");
                 int groupCount = Convert.ToInt32(Console.ReadLine());
+                //Instead of declaring prices here I can write a function in utilities??
                 int standartPrice = 120;
-                //for (int i = 0; i < grupCount; i++)
-                //{
-                //    Console.WriteLine($"how old is custormer number {i+1}");
-                //    int age=Convert.ToInt32(Console.ReadLine());
-                //    Customer customer = new Customer(age);
-
-
-                //}
-                //NEW PRICE CALCULATOR
-
-
-
                 int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
-                Console.WriteLine($"total price: {ticketTotal}");
-
-
-                //LETS MOVE IT TO SOMEWHERE ELSE AND CALL THIS ONE FROM HERE
-                
+                Console.WriteLine($"total price: {ticketTotal}");   
             }
             break;
 
