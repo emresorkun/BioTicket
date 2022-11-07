@@ -27,25 +27,19 @@ namespace BioTicket
         //SAME AS ABOVE
         public int Lenght { get; set; }
 
-
-
-
-
-
-
         const int standartTicketPrice = 120;
         //constructor for the custormer class
 
         public CustomerType customerType;
 
-        public Customer(int ageValue, int idValue, int ticketValue=120)
-        {
-            age= ageValue; 
-            id= idValue;
-            ticketPrice= ticketValue;
-        }
+        //public Customer(int ageValue, int idValue, int ticketValue=120)
+        //{
+        //    age= ageValue; 
+        //    id= idValue;
+        //    ticketPrice= ticketValue;
+        //}
 
-        public Customer(int ageValue, int idValue, int ticketValue, CustomerType custType)
+        public Customer(int ageValue, int idValue, int ticketValue, CustomerType custType=0)
         {
             age = ageValue;
             id = idValue;
@@ -53,6 +47,13 @@ namespace BioTicket
             customerType = custType;
         }
 
+        Customer customer1 = new Customer(21, 1, 0);
+        Customer customer2 = new Customer(16, 2, 0);
+        Customer customer3 = new Customer(36, 3, 0);
+        Customer customer4 = new Customer(96, 4, 0);
+        Customer customer5 = new Customer(6, 5, 0);
+        Customer customer6 = new Customer(18, 6, 0);
+        
 
 
         public int AgeController (int age, int ticketPrice)
