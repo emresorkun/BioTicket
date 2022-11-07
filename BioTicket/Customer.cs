@@ -9,8 +9,8 @@ namespace BioTicket
     internal class Customer
      {
         public int age;
-        public int id;
-        public int ticketPrice;
+        public   int id;
+        public  int ticketPrice;
 
 
         const int standartTicketPrice = 120;
@@ -18,7 +18,7 @@ namespace BioTicket
 
         public CustomerType customerType;
 
-        public Customer(int ageValue, int idValue, int ticketValue)
+        public Customer(int ageValue, int idValue, int ticketValue=120)
         {
             age= ageValue; 
             id= idValue;
@@ -32,6 +32,9 @@ namespace BioTicket
             ticketPrice = ticketValue;
             customerType = custType;
         }
+
+
+
         public int AgeController (int age, int ticketPrice)
         {
             if (age > 20||age<65)
@@ -52,7 +55,17 @@ namespace BioTicket
 
             return ticketPrice;
         }
-        
+
+        public void SetID(int newId)
+        {
+            id = newId;
+        }
+
+        public int GetId()
+        {
+            return id;
+        }
+
         // using agecontroller I can develop another method that calculates total price?
     }
 }

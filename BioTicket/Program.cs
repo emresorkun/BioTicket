@@ -55,7 +55,7 @@ do
                     Console.WriteLine($"enter age of the customer number {i+1}");
                     newCustomer.age= Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"customer id={newCustomer.id} and age={newCustomer.age}");
-                    newCustomer.AgeController(newCustomer.age);
+
                     Console.WriteLine($"ID: {newCustomer.id}+AGE: {newCustomer.age}"); 
                 }
 
@@ -69,8 +69,12 @@ do
             break;
 
     }
-
-
+    //Execise to undertand encapsulation
+    Customer customer2 = new Customer(66, 6666, 129);
+    Console.WriteLine(customer2.GetId());
+    Console.WriteLine(customer2.id);
+    customer2.SetID(3);
+    Console.WriteLine("customer 2 new id "+customer2.id);
     //this never ending loop 3 menu option? 
     //never ending loop
 } while (!myBool);
