@@ -3,6 +3,8 @@
 using BioTicket;
 using System.Transactions;
 bool myBool = false;
+
+
 do
 {
     Console.WriteLine("Welcome to the main menu");
@@ -72,8 +74,9 @@ do
     //Execise to undertand encapsulation
     Customer customer2 = new Customer(66, 6666, 129);
     Console.WriteLine(customer2.GetId());
-    Console.WriteLine(customer2.id);
     customer2.SetID(3);
+    customer2.Lenght = 45;
+    Console.WriteLine(customer2.Lenght);
     Console.WriteLine("customer 2 new id "+customer2.id);
     //this never ending loop 3 menu option? 
     //never ending loop

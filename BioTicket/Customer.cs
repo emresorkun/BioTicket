@@ -6,11 +6,31 @@ using System.Threading.Tasks;
 
 namespace BioTicket
 {
+    // ASK!!! WHY CANT I DO THIS ONE PUBLIC? GIVES AN ERROR! 
     internal class Customer
      {
         public int age;
         public   int id;
         public  int ticketPrice;
+
+        //private int length;
+
+
+        //WHAT LENGHT??? WHY WE DECIDED TO BE LENGHT HERE?
+        // TO VALIDATE! TO CHECK IF THERE IS VALUE ENTERED!!!!
+        //public int MyProperty 
+        //{
+        //    get { return length; }
+        //    set { length = value; }
+        //}
+
+        //SAME AS ABOVE
+        public int Lenght { get; set; }
+
+
+
+
+
 
 
         const int standartTicketPrice = 120;
@@ -56,6 +76,8 @@ namespace BioTicket
             return ticketPrice;
         }
 
+
+        // We created these to understand get and set methods. 
         public void SetID(int newId)
         {
             id = newId;
