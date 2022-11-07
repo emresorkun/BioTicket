@@ -6,89 +6,67 @@ using System.Threading.Tasks;
 
 namespace BioTicket
 {
-    // ASK!!! WHY CANT I DO THIS ONE PUBLIC? GIVES AN ERROR! 
-    internal class Customer
+  public class Customer
      {
-        public int age;
-        public   int id;
-        public  int ticketPrice;
+        public int Id { get; set; }
+        public int Age { get; set; }
 
-        //private int length;
-
-
-        //WHAT LENGHT??? WHY WE DECIDED TO BE LENGHT HERE?
-        // TO VALIDATE! TO CHECK IF THERE IS VALUE ENTERED!!!!
-        //public int MyProperty 
-        //{
-        //    get { return length; }
-        //    set { length = value; }
-        //}
-
-        //SAME AS ABOVE
-        public int Lenght { get; set; }
-
-        const int standartTicketPrice = 120;
-        //constructor for the custormer class
-
-        public CustomerType customerType;
-
-        //public Customer(int ageValue, int idValue, int ticketValue=120)
-        //{
-        //    age= ageValue; 
-        //    id= idValue;
-        //    ticketPrice= ticketValue;
-        //}
-
-        public Customer(int ageValue, int idValue, int ticketValue, CustomerType custType=0)
+        public int GetPrice()
         {
-            age = ageValue;
-            id = idValue;
-            ticketPrice = ticketValue;
-            customerType = custType;
+            if (Age > 50) return 100;
+            if (Age < 50) return 200;
+            return 50;
         }
 
-        Customer customer1 = new Customer(21, 1, 0);
-        Customer customer2 = new Customer(16, 2, 0);
-        Customer customer3 = new Customer(36, 3, 0);
-        Customer customer4 = new Customer(96, 4, 0);
-        Customer customer5 = new Customer(6, 5, 0);
-        Customer customer6 = new Customer(18, 6, 0);
+        public Customer(int id, int age)
+        {
+            Id = id;
+            Age = age;
+        }
+
+        //Customer customer1 = new Customer(21, 1);
+        //Customer customer2 = new Customer(16, 2);
+        //Customer customer3 = new Customer(36, 3);
+        //Customer customer4 = new Customer(96, 4);
+        //Customer customer5 = new Customer(6, 5);
+        //Customer customer6 = new Customer(18, 6);
         
 
 
-        public int AgeController (int age, int ticketPrice)
-        {
-            if (age > 20||age<65)
-            {
-                ticketPrice= standartTicketPrice; 
+
+        //public int AgeController (int age, int ticketPrice)
+        //{
+        //    if (age > 20||age<65)
+        //    {
+        //        ticketPrice= standartTicketPrice; 
                 
-            }
-            if (age < 20)
-            {
-                ticketPrice = 80;
-            }
-            if (age>65)
-            {
-                ticketPrice = 90;
-            };
-            Console.WriteLine($"Customer number {id+1} will pay {ticketPrice}");
+        //    }
+        //    if (age < 20)
+        //    {
+        //        ticketPrice = 80;
+        //    }
+        //    if (age>65)
+        //    {
+        //        ticketPrice = 90;
+        //    };
+        //    Console.WriteLine($"Customer number {id+1} will pay {ticketPrice}");
             
 
-            return ticketPrice;
-        }
+        //    return ticketPrice;
+        //}
 
 
-        // We created these to understand get and set methods. 
-        public void SetID(int newId)
-        {
-            id = newId;
-        }
+        //// We created these to understand get and set methods. 
+        //public void SetID(int newId)
+        //{
+        //    id = newId;
+        //}
 
-        public int GetId()
-        {
-            return id;
-        }
+        //public int GetId()
+        //{
+        //    return id;
+        //}
 
-        // using agecontroller I can develop another method that calculates total price?
+        //// using agecontroller I can develop another method that calculates total price?
     }
 }
