@@ -13,7 +13,8 @@ namespace BioTicket
             //Console.WriteLine($"total: {price * groupCount}");
             return price * groupCount;
         }
-
         
+
+
     }
 }

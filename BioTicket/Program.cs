@@ -1,6 +1,7 @@
 ﻿
 
 using BioTicket;
+using System;
 using System.Transactions;
 bool myBool = false;
 
@@ -8,11 +9,8 @@ bool myBool = false;
 
 do
 {
-    Console.WriteLine("Welcome to the main menu");
-    Console.WriteLine("In order to test different functions");
-    Console.WriteLine("0 will end this programme");
-    Console.WriteLine("1 will suprise you");
-    Console.WriteLine("-----------------\n");
+    ShowMenu();
+
     string userInput = Console.ReadLine()!;
     switch (userInput)
     {
@@ -32,14 +30,17 @@ do
                 if (age>64)
                 {
                     Console.WriteLine("Thank you for your service! You pay 90 SEK");
+                    Console.WriteLine("-----------------\n");
                 }
                 if (age<=20)
                 {
                     Console.WriteLine("You are young! You pay 80 SEK");
+                    Console.WriteLine("-----------------\n");
                 }
                 if (age<=64 && age>20)
                 {
                     Console.WriteLine("the price is 120 SEK");
+                    Console.WriteLine("-----------------\n");
                 }
             }
             break;
@@ -48,45 +49,28 @@ do
                 Console.WriteLine("Want to learn your total ticket cost?");
                 Console.WriteLine("How many are you?");
                 int groupCount = Convert.ToInt32(Console.ReadLine());
-                //let cal = new String("Hej");
-                //let cal = 'Hej';
-
-                //function GroupCal(){
-                //this.groupCall = [];
-                //this.AddCustomer = function(){.....}
-            
-                //}
-
-                //let cal = new GroupCall();
-                //cal.AddPerson()
-                //let cal2 = new GroupCall();
-               
+                
 
                 GroupCal cal = new GroupCal();
-               // Console.WriteLine(cal.GetType().Name);
-                //cal.AddCustomer(1,50);
-                //ASK ASK ASK WHERE SHOULD BE THE LIST PLACED????
                 
-                //Instead of declaring prices here I can write a function in utilities??
-                //int standartPrice = 120;
-                //int ticketTotal = Utilities.CalculateTotal(groupCount, standartPrice);
-                //Console.WriteLine($"total price: {ticketTotal}");
                 for (int i = 0; i < groupCount; i++)
                 {
-                    //GroupCal cal = new GroupCal();
-
-                    ////Customer newCustomer = new Customer(0, i, 120);
+                    
                     Console.WriteLine($"enter age of the customer number {i+1}");
                     string input = Console.ReadLine();
-                    //Convert to int  with int.TryParse()
+                    //Convert to int  with int.TryParse
+
                     int age = 0;
                     if(!int.TryParse(input, out age))
                     {
                         //Couldent parse
-                        Console.WriteLine($"Couldent parse {input} to int, {input} is set to 0"); //Do better?
+                        Console.WriteLine($"Only numbers are allowed in this program. You are being directed to exit. Run the programme again");
+                        Environment.Exit(0);
+                        //HOW TO Direck to the main menu?
                     }
 
                     cal.AddCustomer(i+1, age);
+                    
 
                     //Get input
                     //Call call.AddCustomer with id and age
@@ -101,8 +85,8 @@ do
                 {
                     total = total + customer.GetPrice();
                 }
-
-                Console.WriteLine(total);
+                Console.WriteLine($"-----------------\n");
+                Console.WriteLine($"Your movie theater visit will cost {total} Unit money today");
 
                 //TRY ANOTHER WAY TO CREATE INSTANSES
 
@@ -112,26 +96,31 @@ do
                 //customer class will have a methofs (properties cover fields?)
             }
             break;
+        case "4":
+            {
+                Console.WriteLine("please enter a value so we can loop");
+                string userLoop= Console.ReadLine();
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(userLoop);
+                }
+            }
+            break;
 
     }
-    ////Execise to undertand encapsulation
-    //Customer customer2 = new Customer(66, 6666, 129);
-    //Console.WriteLine(customer2.GetId());
-    //customer2.SetID(3);
-    //customer2.Lenght = 45;
-    //Console.WriteLine(customer2.Lenght);
-    //Console.WriteLine("customer 2 new id "+customer2.id);
-    ////this never ending loop 3 menu option? 
-    //never ending loop
+
 } while (!myBool);
 
-
-//Customer cust2 = new Customer("Test", "Testsson", 1980);
-//Customer emre = new Customer("emre", "sorkun", 1979);
-//Console.WriteLine(emre);
-//emre.DisplayCustomerDetails();
-
-//emre.AgeCalculater();
-
-
-//emre.AgeCalculater2(cust2, 5);
+void ShowMenu()
+{
+    Console.WriteLine("-----------------\n");
+    Console.WriteLine("Welcome to the main menu");
+    Console.WriteLine("-----------------\n");
+    Console.WriteLine("In order to test different functions");
+    Console.WriteLine("0 Will end this programme");
+    Console.WriteLine("1 Will suprise you");
+    Console.WriteLine("2 Give you the price and discount list");
+    Console.WriteLine("3 Will calculate the total amount of your bio group tickets!");
+    Console.WriteLine("4 Will loop for you");
+    Console.WriteLine("-----------------\n");
+}
