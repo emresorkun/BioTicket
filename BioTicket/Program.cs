@@ -3,6 +3,8 @@
 using BioTicket;
 using System;
 using System.Transactions;
+using static System.Net.Mime.MediaTypeNames;
+
 bool myBool = false;
 
 
@@ -102,8 +104,26 @@ do
                 string userLoop= Console.ReadLine();
                 for (int i = 0; i < 10; i++)
                 {
-                    Console.WriteLine(userLoop);
+                    Console.Write(userLoop+" ");
                 }
+            }
+            break;
+        case "5":
+            {
+                Console.WriteLine("please enter a sentence");
+                string sentence= Console.ReadLine();
+                string[] result = sentence.Split(" ");
+                if (result.Length > 3)
+                {
+                    Console.WriteLine("wel done");
+                    Console.WriteLine($"this is the third word in your sentence {result[2]}");
+                }  
+                else
+                {
+                    Console.WriteLine("please write more then 3 words!!!");
+
+                }
+                
             }
             break;
 
@@ -122,5 +142,6 @@ void ShowMenu()
     Console.WriteLine("2 Give you the price and discount list");
     Console.WriteLine("3 Will calculate the total amount of your bio group tickets!");
     Console.WriteLine("4 Will loop for you");
+    Console.WriteLine("5 Will Find the third word of your sentence for you");
     Console.WriteLine("-----------------\n");
 }
