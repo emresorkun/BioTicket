@@ -126,10 +126,18 @@ do
                 
             }
             break;
+        case "6":
+            {
+                Utilities.testMethod1();
+            }
+            break;
 
     }
 
 } while (!myBool);
+
+
+
 
 void ShowMenu()
 {
